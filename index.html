@@ -89,9 +89,9 @@
 
     <section data-for="hr2">
       <h2>Controleer je telling</h2>
-      <p class="hint">Deze knoppen zetten de afstand op 50 lj en tekenen het kader uit de opdracht.</p>
+      <p class="hint">Deze knoppen tekenen het kader uit de opdracht. Bij de witte dwergen springt de afstand naar 50 lj.</p>
       <div class="row">
-        <button id="pMS">Zwakke hoofdreeks<small>log P &lt; 0 en log T &lt; 3,7</small></button>
+        <button id="pG">Reuzen<small>log P &gt; 1 en log T &lt; 3,7</small></button>
         <button id="pWD">Witte dwergen<small>log P &lt; −1 en log T &gt; 3,7</small></button>
       </div>
     </section>
@@ -357,7 +357,7 @@ $('dist').addEventListener('input', e => setDist(+e.target.value));
   $('presets').appendChild(b);
 });
 $('clear').addEventListener('click', () => { state.sel = null; updateStats(); schedule(); });
-$('pMS').addEventListener('click', () => { setDist(50); state.sel = {x0: XMIN, x1: 3.7, y0: YMIN, y1: 0}; updateStats(); schedule(); });
+$('pG').addEventListener('click', () => { state.sel = {x0: XMIN, x1: 3.7, y0: 1, y1: YMAX}; updateStats(); schedule(); });
 $('pWD').addEventListener('click', () => { setDist(50); state.sel = {x0: 3.7, x1: XMAX, y0: YMIN, y1: -1}; updateStats(); schedule(); });
 
 let dragging = false, start = null;
